@@ -1,0 +1,17 @@
+﻿@model Course.Models.StudentForCreation;
+
+<div class="card-body">
+    <h5 class="card-title fw-semibold mb-4">Krijo Student</h5>
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Create">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input asp-for="Name" type="text" class="form-control" aria-describedby="emailHelp">
+                    <div class="form-text">We'll never share your name with anyone else.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

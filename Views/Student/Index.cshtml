@@ -1,0 +1,36 @@
+﻿@model List<Course.Data.Student>;
+
+<div class="card-body">
+    <h5 class="card-title fw-semibold mb-4">Lista e Studenteve</h5>
+    <a style="float:right;" type="button" class="btn btn-primary mb-4" asp-controller="Student" asp-action="Create">
+        <i class="fa-solid fa-plus"></i> &ensp; Krijo
+    </a>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <th scope="row">@student.Id</th>
+                    <td>@student.Name</td>
+                    <td>
+                        <a asp-controller="Student" asp-action="Edit" asp-route-id="@student.Id">
+                            <i title="Modifiko" class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        &ensp;
+                        <a asp-controller="Student" asp-action="Delete" asp-route-id="@student.Id">
+                            <i title="Fshi" style="color:red;" class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
